@@ -1,0 +1,24 @@
+HOMEWORK
+
+EXERCISE #1.
+
+1. Create files index.js and book.js
+2. In the file book.js create a function called "printBookInfo" that accepts object as parametar.
+3. The object should have the following properties: bookName, bookPrice, bookAuthor, bookReleaseDate, bookPages.
+4. Export the function as module.
+5. Import the function in index.js
+6. Call the function with a coresponding argument ( it can be object literal )
+
+EXERCISE #2.
+
+1. Init a project called calculator.
+Hint: use command "npm init" (without "")
+2. Create a file names calculatorModule.js
+3. In this file create a function that takes 3 parametars: numberOne, numberTwo, operand
+4. Based on what is the operand, return the coresponding mathematical operation. 
+Hint: if operand is * we will multiply the numbers
+5. Export this function as module.
+6. Create file index.js, and import the calculator module that we exported from calculatorModule.js
+7. Use the function with all different operands.
+
+BONUS: Install nodemon in this project that you've inited.

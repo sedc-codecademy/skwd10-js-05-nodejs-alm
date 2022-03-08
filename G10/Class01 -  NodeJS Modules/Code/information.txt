@@ -1,0 +1,17 @@
+CLONING THE PROJECT.
+
+1. When you get the project from github, open terminal in the directory of first-project-init.
+2. Type the command "npm intall" in the terminal (without the ""). 
+3. This command will make package-lock.json reinstall all the packages that our project requires =)
+4. You will notice a folder node_modules will be created.
+
+Feel free to experiment with the code. Happy hacking :)
+
+INSTALLING NODEMON.
+
+1. If we install nodemon in our project and when executing with the command nodemon and get red error in console
+    as "nodemon is not recongnised....." we should do the following.
+2. Open "window/start" at the left bottom corner. Type "powershell". Open powershell AS administrator.
+3. Type the following command : set-executionpolicy remotesigned and press enter.
+4. A text will appear asking from us to write a letter. Type "A" (without "") and press enter =).
+5. Restart/re-open terminal that is opened in vsCode. 
