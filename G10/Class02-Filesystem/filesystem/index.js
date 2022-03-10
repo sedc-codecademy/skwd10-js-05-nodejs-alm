@@ -73,7 +73,12 @@ const appStart = async () => {
   await fsPromises.writeFile(newPath, "I have been overwritten with promises");
   const newData = await fsPromises.readFile(newPath, { encoding: "utf-8" });
   console.log(newData);
-  //TODO Add the text ". this file has been appended by a student of G10"
+  await fsPromises.appendFile(
+    newPath,
+    ". this file has been appended by a student of G10"
+  );
+  const updatedData = await fsPromises.readFile(newPath, { encoding: "utf-8" });
+  console.log(updatedData);
 };
 
 appStart();
