@@ -15,7 +15,7 @@ const getAllTasks = () => {
 
 //Save all tasks
 const saveTasks = tasks => {
-  fs.writeFileSync(tasksPath, JSON.stringify(tasks));
+  fs.writeFileSync(tasksPath, JSON.stringify(tasks, null, 2));
 };
 
 //Creating a new task
@@ -42,8 +42,21 @@ const finishTask = taskId => {
   saveTasks(tasks);
 };
 
-//TODO Delete a task
-const deleteTask = taskId => {};
+//TODO Delete a task (10 min student exercise)
+const deleteTask = taskId => {
+  const tasks = getAllTasks();
+
+  const updatedTasks = tasks.filter(task => task.id !== taskId);
+
+  if (tasks.length === updatedTasks.length) throw new Error("Task not found");
+
+  saveTasks(updatedTasks);
+};
+
+const finishAllTasks = tasks => {
+  tasks.forEach(task => (task.isFinished = true));
+  saveTasks(tasks);
+};
 
 module.exports = {
   getAllTasks,
@@ -51,6 +64,7 @@ module.exports = {
   createTask,
   finishTask,
   deleteTask,
+  finishAllTasks,
 };
 
 console.log("changed");
