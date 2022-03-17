@@ -1,0 +1,8 @@
+Name: Apples
+Price: 30
+Date Added: Thu Mar 17 2022 20:41:23 GMT+0100 (Central European Standard Time)
+================================================================================
+Name: Walnuts
+Price: 300
+Date Added: Thu Mar 17 2022 20:41:48 GMT+0100 (Central European Standard Time)
+================================================================================
