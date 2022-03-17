@@ -1,0 +1,13 @@
+{
+  "products": [
+    { "productName": "Avocado", "productPrice": "100", "date": "10.08.2023" },
+    { "productName": "Milka", "productPrice": "50", "date": "10.08.2023" },
+    { "productName": "Milka", "productPrice": "50", "date": "10.08.2023" },
+    { "productName": "Rice", "productPrice": "30", "date": "10.8.2022" },
+    { "productName": "Cedevita", "productPrice": "300", "date": "20.5.2023" },
+    { "productName": "qwe", "productPrice": "qwe", "date": "qwe" },
+    { "productName": "www", "productPrice": "ww", "date": "ww" },
+    { "productName": "eee", "productPrice": "eee", "date": "eee" },
+    { "productName": "sss", "productPrice": "sss", "date": "sss" }
+  ]
+}
