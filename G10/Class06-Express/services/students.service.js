@@ -5,12 +5,32 @@ const { v4: uuid } = require("uuid");
 const studentsPath = path.join(__dirname, "..", "data", "students.json");
 
 //1. Get students data
-const getStudentsData = () =>
-  JSON.parse(fs.readFileSync(studentsPath, { encoding: "utf-8" }));
+const getStudentsData = queryData => {
+  const students = JSON.parse(
+    fs.readFileSync(studentsPath, { encoding: "utf-8" })
+  );
+
+  let updatedStudents = [...students];
+
+  if (queryData?.gender) {
+    updatedStudents = updatedStudents.filter(
+      student => student.gender === queryData.gender
+    );
+  }
+  if (queryData?.country) {
+    updatedStudents = updatedStudents.filter(
+      student => student.country === queryData.country
+    );
+  }
+
+  if (updatedStudents.length <= 0) throw new Error("No students found");
+
+  return updatedStudents;
+};
 
 //2. Save students date
 const saveStudentData = students =>
-  JSON.stringify(fs.writeFileSync(studentsPath, students));
+  fs.writeFileSync(studentsPath, JSON.stringify(students, 0, 2));
 
 //3.Add new student
 const addStudent = newStudentData => {
@@ -44,8 +64,7 @@ const updateStudent = (studentId, studentUpdateData) => {
     student => student.id === studentId
   );
   //If student index is not found
-  if (!foundStudentIndex || foundStudentIndex < 0)
-    throw new Error("Student not found");
+  if (foundStudentIndex < 0) throw new Error("Student not found");
 
   const updatedStudentData = {
     ...students[foundStudentIndex],
