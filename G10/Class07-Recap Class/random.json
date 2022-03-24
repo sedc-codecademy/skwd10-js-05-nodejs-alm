@@ -1,1 +1,6 @@
-[{"firstName":"George","lastName":"Dimitrov"},{"firstName":"Borche","lastName":"Borisovski"}]
+[
+  { "firstName": "George", "lastName": "Dimitrov" },
+  { "firstName": "Borche", "lastName": "Borisovski" },
+  { "firstName": "Cedevita", "lastName": "Portokal" },
+  { "firstName": "Bob", "lastName": "Bobski" }
+]

@@ -117,3 +117,20 @@ emitter.emit("greet", "Hello world folks");
  * Create a function that will accept array of numbers as parametar
  * If the number is EVEN then we should write it in the file evenNumbers.txt
  */
+
+// let array = [2 ,4 ,6, 1, 3,7,10]
+// 2,
+// 4,
+// 6,
+// 10
+
+let someArr = [4, 6, 7, 5, 9, 3];
+emitter.on("write_to_file", (array) => {
+  for (let number of array) {
+    if (number % 2 === 0) {
+      fs.appendFileSync("evenNumbers.txt", `\n${number}`);
+    }
+  }
+});
+
+emitter.emit("write_to_file", someArr);
