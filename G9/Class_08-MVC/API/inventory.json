@@ -1,0 +1,34 @@
+{
+  "inventory": [
+    {
+      "id": "f14f02e2-2e3e-435f-bda8-d1d8a47b1234",
+      "title": "Tomato",
+      "price": "3.99"
+    },
+    {
+      "id": "362cb66e-1b91-4ac8-87e4-499d040a7ad5",
+      "title": "Potato",
+      "price": "5.29"
+    },
+    {
+      "title": "Lettuce",
+      "price": "2.99",
+      "id": "870a0754-2ba2-4dca-9ee2-7e707d075055"
+    },
+    {
+      "title": "Apple",
+      "price": "5.99",
+      "id": "97f158fc-a1f2-4fa8-a184-7be057b72c67"
+    },
+    {
+      "title": "Phone",
+      "price": "99.99",
+      "id": "b08748d5-6dbe-4006-bfb8-79ea4d6aa9ba"
+    },
+    {
+      "title": "Book",
+      "price": "35.99",
+      "id": "2d082238-9a6b-41f5-85bc-bedcf2c9a6e4"
+    }
+  ]
+}
