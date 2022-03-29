@@ -10,8 +10,7 @@ The User should be able to create a new person in the database with a name, phon
 Bonus 1: The user should be able to delete a person from the phonebook database.
 Bonus 2: The user should be able to edit a person in the database (Change the name, picture or the phoneNumber)
 Bonus 3: Add a middleware that checks if the phoneNumber has exactly 6 characters. If it does it should let the request move on to the next middleware. If not, it should respond with an appropriate message.
-
-Starting dummy data .json
+За starting dummy data може да го користите овој .json
 
 [
 
@@ -55,7 +54,7 @@ Starting dummy data .json
 
 
 
-You can find some images on this link:
+Слики можете да најдете на овој сајт.
 
 https://www.uifaces.co/browse-avatars/
 
