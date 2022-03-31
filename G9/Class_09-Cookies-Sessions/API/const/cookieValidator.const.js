@@ -12,3 +12,8 @@ const validateCookie = (req, res, next) => {
 };
 
 module.exports = validateCookie;
+
+/*
+Cookies are sent with almost every request. Can't go around this. 
+In some cases they aren't, but thats advanced security stuff.
+*/
