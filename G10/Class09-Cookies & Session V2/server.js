@@ -4,6 +4,7 @@ const session = require("express-session");
 
 const authRoutes = require("./routes/auth.routes");
 const productsRoutes = require("./routes/products.routes");
+const fruitsRoutes = require("./routes/fruits.routes");
 
 const app = express();
 
@@ -39,39 +40,12 @@ const app = express();
  * we do not modify the req.session object, the req.session object will be saved on the session store/server side
  */
 
-// Secret is used to sign the session ID cookie =)
-// touch
-
-const createSession = session({
-  secret: "our_secret_123",
-  name: "cookie_id",
-  cookie: {
-    maxAge: 5 * 60 * 60 * 1000,
-  },
-  saveUninitialized: true,
-  resave: true,
-});
-
-// It is same as above :)
-
-// app.use(
-//   session({
-//     secret: "our_secret_123",
-//     name: "cookie_id",
-//     cookie: {
-//       maxAge: 5 * 60 * 60 * 1000,
-//     },
-//     saveUninitialized: true,
-//     resave: false,
-//   })
-// );
-
-app.use(createSession);
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(authRoutes);
 app.use(productsRoutes);
+app.use(fruitsRoutes);
 
 app.listen(3000, "localhost", () => {
   console.log("Server is up and running on PORT:3000");

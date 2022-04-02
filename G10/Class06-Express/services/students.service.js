@@ -5,7 +5,7 @@ const { v4: uuid } = require("uuid");
 const studentsPath = path.join(__dirname, "..", "data", "students.json");
 
 //1. Get students data
-const getStudentsData = queryData => {
+const getStudentsData = (queryData) => {
   const students = JSON.parse(
     fs.readFileSync(studentsPath, { encoding: "utf-8" })
   );
@@ -14,12 +14,12 @@ const getStudentsData = queryData => {
 
   if (queryData?.gender) {
     updatedStudents = updatedStudents.filter(
-      student => student.gender === queryData.gender
+      (student) => student.gender === queryData.gender
     );
   }
   if (queryData?.country) {
     updatedStudents = updatedStudents.filter(
-      student => student.country === queryData.country
+      (student) => student.country === queryData.country
     );
   }
 
@@ -29,26 +29,38 @@ const getStudentsData = queryData => {
 };
 
 //2. Save students date
-const saveStudentData = students =>
+const saveStudentData = (students) =>
   fs.writeFileSync(studentsPath, JSON.stringify(students, 0, 2));
 
 //3.Add new student
-const addStudent = newStudentData => {
+const addStudent = (newStudentData) => {
   const students = getStudentsData();
   const newStudent = {
     id: uuid(),
+
+    // firstName:newStudentData.firstName,
+    // lastName: newStudentData.lastName,
+    // age: newStudentData.age,
+    // gender: newStudentData.gender,
+    // country: newStudentData.country,
+    // email: newStudentData.email,
+    // grade: newStudentData.grade
+
     ...newStudentData,
   };
   const updatedStudents = [...students, newStudent];
+
+  // students.push(newStudent)
+
   saveStudentData(updatedStudents);
   return newStudent;
 };
 
 //4.Get student by id
-const getStudentById = studentId => {
+const getStudentById = (studentId) => {
   const students = getStudentsData();
 
-  const foundStudent = students.find(student => student.id === studentId);
+  const foundStudent = students.find((student) => student.id === studentId);
 
   if (!foundStudent) throw new Error("Student Not Found");
 
@@ -61,7 +73,7 @@ const updateStudent = (studentId, studentUpdateData) => {
 
   const students = getStudentsData();
   const foundStudentIndex = students.findIndex(
-    student => student.id === studentId
+    (student) => student.id === studentId
   );
   //If student index is not found
   if (foundStudentIndex < 0) throw new Error("Student not found");
@@ -69,6 +81,8 @@ const updateStudent = (studentId, studentUpdateData) => {
   const updatedStudentData = {
     ...students[foundStudentIndex],
     ...studentUpdateData,
+    // firstName: studentUpdateData.firstName,
+    // lastName: studentUpdateData.lastName
   };
 
   students[foundStudentIndex] = updatedStudentData;
@@ -78,11 +92,11 @@ const updateStudent = (studentId, studentUpdateData) => {
 };
 
 //6. Deleting a student
-const deleteStudent = studentId => {
+const deleteStudent = (studentId) => {
   const students = getStudentsData();
 
   const updatedStudentData = students.filter(
-    student => student.id !== studentId
+    (student) => student.id !== studentId
   );
 
   saveStudentData(updatedStudentData);

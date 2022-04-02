@@ -1,5 +1,17 @@
+// const express = require('express')
+// const router = express.Router()
+
 const router = require("express").Router();
 const studentService = require("../services/students.service");
+
+// CRUD = Create; Read; Update; Delete
+
+// localhost:3000/api/students
+//                              key   value pair
+// localhost:3000/api/students?gender=F
+// localhost:3000/api/students?country=France
+
+// localhost:3000/api/students?gender=F&country=France
 
 //1. Get all students
 router.get("/students", (req, res) => {
@@ -16,6 +28,7 @@ router.get("/students", (req, res) => {
 //2. Get student by id
 router.get("/students/:id", (req, res) => {
   const studentId = req.params.id;
+  console.log(req.params);
   try {
     const student = studentService.getStudentById(studentId);
     res.status(200).send(student);

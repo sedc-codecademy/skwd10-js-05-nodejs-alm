@@ -1,0 +1,28 @@
+{
+	"products": [
+		{	
+			"id": 1,
+			"type": "shoes",
+			"brand": "nike",
+			"stock": 150
+		},
+		{
+			"id": 2,
+			"type": "car",
+			"brand": "bmw",
+			"stock": 30
+		},
+		{
+			"id": 3,
+			"type": "cpu",
+			"brand": "amd",
+			"stock": 3000
+		},
+		{
+			"id": 4,
+			"type": "gpu",
+			"brand": "nvidia",
+			"stock": 0
+		}
+	]
+}
