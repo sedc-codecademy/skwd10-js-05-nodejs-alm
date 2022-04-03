@@ -4,18 +4,36 @@ const authController = new AuthController();
 const { v4: uuidv4 } = require("uuid");
 
 // [Cookies]
+// router.post("/login", (req, res) => {
+//   const credentials = req.body;
+//   const session_id = uuidv4();
+//   process.env.session_id = session_id;
+
+//   if (credentials && credentials.username && credentials.password) {
+//     authController
+//       .loginUser(credentials)
+//       .then((response) => {
+//         // Standard way of creating a cookie
+//         // res.setHeader("set-cookie", `session_id: ${session_id}`);
+//         res.cookie("session_id", session_id);
+//         res.cookie("theme_id", "dark");
+//         res.status(200).json(response);
+//       })
+//       .catch((error) => {
+//         res.status(401).json(error);
+//       });
+//   }
+// });
+
+// [Session]
 router.post("/login", (req, res) => {
   const credentials = req.body;
-  const session_id = uuidv4();
-  process.env.session_id = session_id;
-
   if (credentials && credentials.username && credentials.password) {
     authController
       .loginUser(credentials)
       .then((response) => {
-        // Standard way of creating a cookie
-        // res.setHeader("set-cookie", `session_id: ${session_id}`);
-        res.cookie("session_id", session_id);
+        console.log(response);
+        req.session.authenticated = true;
         res.status(200).json(response);
       })
       .catch((error) => {

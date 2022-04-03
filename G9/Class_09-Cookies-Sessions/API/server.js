@@ -3,11 +3,13 @@ const cors = require("cors");
 const customCors = require("./const/cors.const");
 const cookieParser = require("cookie-parser");
 const router = require("./const/router.const");
+const session = require("./const/session.const");
 
 const app = express();
 
 // app.use(cors());
 app.use(customCors);
+app.use(session);
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
