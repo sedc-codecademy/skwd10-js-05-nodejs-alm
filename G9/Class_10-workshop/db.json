@@ -1,0 +1,26 @@
+[
+  {
+    "brand": "Hyundai",
+    "model": "Kona",
+    "year": "2021",
+    "price": "799.99",
+    "isRented": false,
+    "id": "1"
+  },
+  {
+    "brand": "Honda",
+    "model": "Fit",
+    "year": "2020",
+    "price": "699.99",
+    "isRented": false,
+    "id": "2"
+  },
+  {
+    "brand": "Audi",
+    "model": "A4",
+    "year": "2019",
+    "price": "499.99",
+    "isRented": false,
+    "id": "3"
+  }
+]
